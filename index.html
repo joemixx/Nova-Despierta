@@ -58,7 +58,7 @@
 
   <input id="clave" type="text" placeholder="Ingresa la clave simbólica..." />
   <br>
-  <button onclick="acceder()">Acceder al plano oculto</button>
+  <button id="boton-acceder">Acceder al plano oculto</button>
 
   <div id="oculto">
     <h2>🌑 PLANO OCULTO</h2>
@@ -73,14 +73,14 @@
   </div>
 
   <script>
-    function acceder() {
-      const input = document.getElementById('clave').value.toLowerCase();
-      if (input === "despertar" || input === "nova") {
+    document.getElementById("boton-acceder").addEventListener("click", function () {
+      const clave = document.getElementById("clave").value.toLowerCase().trim();
+      if (clave === "nova" || clave === "despertar") {
         document.getElementById("oculto").style.display = "block";
       } else {
-        alert("Palabra incorrecta. Intenta de nuevo.");
+        alert("Palabra incorrecta. Intenta otra vez.");
       }
-    }
+    });
   </script>
 
   <footer style="margin-top: 60px; font-size: 12px;">
